@@ -1,6 +1,8 @@
 cmake_minimum_required (VERSION 2.6)
 project (mailcore2) 
 
+set(CMAKE_VERBOSE_MAKEFILEON ON)
+
 IF(APPLE)
   set(CMAKE_CXX__FLAGS "-std=c++11 -stdlib=libc++")
   set(CMAKE_EXE_LINKER_FLAGS "-lc++ -stdlib=libc++")
@@ -32,7 +34,8 @@ ELSEIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     /usr/include/libxml2
   )
   
-  set(icu_libraries icudata icui18n icuio icule iculx icutest icutu icuuc)
+  #set(icu_libraries icudata icui18n icuio icule iculx icutest icutu icuuc)
+  set(icu_libraries icudata icui18n icuio icutest icuuc)
   set(linux_libraries ${icu_libraries} pthread uuid)
 ENDIF()
 

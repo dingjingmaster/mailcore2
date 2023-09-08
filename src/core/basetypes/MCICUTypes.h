@@ -7,15 +7,15 @@
 //
 
 #ifndef MAILCORE_MCICUTYPES_H
-
 #define MAILCORE_MCICUTYPES_H
 
 #ifdef _MSC_VER
 typedef wchar_t UChar;
-#elif defined(__CHAR16_TYPE__)
-typedef __CHAR16_TYPE__ UChar;
+//#elif defined(__CHAR16_TYPE__)
+//typedef __CHAR16_TYPE__ UChar;
 #else
-typedef uint16_t UChar;
+#include <unicode/umachine.h>
+//typedef unsigned char UChar;
 #endif
 
 #endif
